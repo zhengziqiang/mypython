@@ -1,0 +1,12 @@
+from Tkinter import *
+root=Tk();root.title("log")
+f1=Frame(root);f1.pack()
+f2=Frame(root);f2.pack()
+f3=Frame(root);f3.pack()
+Label(f1,text="username").pack(side=LEFT)
+Entry(f1).pack(side=LEFT)
+Label(f2,text="passwd").pack(side=LEFT)
+Entry(f2).pack(side=LEFT)
+Button(f3,text="logging").pack(side=RIGHT)
+Button(f3,text="cancel").pack(side=RIGHT)
+root.mainloop()
