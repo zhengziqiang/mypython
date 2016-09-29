@@ -93,6 +93,28 @@ class sendMail(object):
 	def getMailInfo(self):
 		self.sendToAdd=self.sendToEntry.get().strip()
 		self.subjectInfo=self.subjectEntry.get().strip()
-		self.sendT
+		self.sendTextInfo=self.sendText.get(1.0.END)
+
+	def sendMail(self):
+		self.getMailInfo()
+		body=string.join(("From: %s" % self.sender, "To: %s" % self.sendToAdd, "Subject: %s" % self.subjectInfo, "", self.sendTextInfo), "\r\n")  
+        try:
+        	self.smtp.sendmail(self.sender,[self.sendToAdd],body)
+        except Exception as e:
+        	mes.showerror("send failure:","%s"%e)
+        mes.showinfo('Prompt','success')
+	def newMail(self):
+		self.sendToEntry.delete(0,END)
+		self.subjectEntry.delete(0,END)
+		self.sendText.delete(1,END)
+
+
+if __name__=='__main__':
+	root=Tk()
+	root.title('simple mail send system')
+	mylogin=loginPage(root)
+	mainloop()
 
 		
+
+
