@@ -1,0 +1,6 @@
+pip install python-virtualenv(pip install virtualenv)
+virtualenv .env
+source .env/bin/activate.sh
+
+#log out the virtualenv
+deactivate
