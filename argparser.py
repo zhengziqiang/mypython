@@ -31,7 +31,7 @@ if __name__=='__main__':
 	txt=""
 	for i in range(HEIGHT):
 		for j in range(WIDTH):
-			txt+=get_char(*im.getpixel((j,i)))
+			txt+=get_char(*im.getpixel((j,i)))#这是三个等号
 		txt+='\n'  #字符填充
 	print txt
 

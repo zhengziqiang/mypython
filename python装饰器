@@ -1,0 +1,9 @@
+legb原则
+l： local函数内部作用域
+e:enclosing函数内部与内嵌函数之间（称之为闭包）
+g:global函数全局作用域
+b:build-in函数内置作用域
+l>e>g>b
+
+
+
