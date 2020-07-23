@@ -1,7 +1,7 @@
 from Tkinter import *
-master=Tk()
+main=Tk()
 var=IntVar()
-Label(master,text='First').grid(sticky=E)
-Label(master,text='Second').grid(sticky=E)
-e1=Entry(master)
+Label(main,text='First').grid(sticky=E)
+Label(main,text='Second').grid(sticky=E)
+e1=Entry(main)
 e2=
