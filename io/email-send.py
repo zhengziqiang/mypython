@@ -4,29 +4,29 @@ import string
 import tkMessageBox as mes
 
 class loginPage(object):
-	def __init__(self,master,info='Mail Send System'):
-		self.master=master
-		self.mainlabel=Label(master,text=info,justify=CENTER)
+	def __init__(self,main,info='Mail Send System'):
+		self.main=main
+		self.mainlabel=Label(main,text=info,justify=CENTER)
 		self.mainlabel.grid(row=0,columnspan=3)
 
 
-		self.user=Label(master,text='username',borderwidth=2)
+		self.user=Label(main,text='username',borderwidth=2)
 		self.user.grid(row=1,sticky=W)
 
-		self.pwd=Label(master,text='passwd',borderwidth=2)
+		self.pwd=Label(main,text='passwd',borderwidth=2)
 		self.pwd.grid(row=2,sticky=W)
 
-		self.userEntry=Entry(master)
+		self.userEntry=Entry(main)
 		self.userEntry.grid(row=1,column=1,columnspan=2)
 		self.userEntry.focus_set()
 
-		self.pwdEntry=Entry(master,show='*')
+		self.pwdEntry=Entry(main,show='*')
 		self.pwdEntry.grid(row=2,column=1,columnspan=1)
 
-		self.loginButton=Button(master,text='login',borderwidth=2,command=self.login)
+		self.loginButton=Button(main,text='login',borderwidth=2,command=self.login)
 		self.loginButton.grid(row=3,column=1)
 
-		self.clearButton=Button(master,text='Clear',borderwidth=2,command=self.clear)
+		self.clearButton=Button(main,text='Clear',borderwidth=2,command=self.clear)
 		self.clearButton.grid(row=3,column=2)
 
 	def login(self):
@@ -50,7 +50,7 @@ class loginPage(object):
 		except Exception, e:
 			mes.showerror('connecting error','%s'%e)
 			return 
-		self.mySendMail=sendMail(self.master,self.mysmtp,self.username)
+		self.mySendMail=sendMail(self.main,self.mysmtp,self.username)
 
 	def clear():
 		self.userEntry.delete(0,END)
@@ -63,11 +63,11 @@ class loginPage(object):
 
 
 class sendMail(object):
-	def __init__(self,master,smtp='',sender=''):
+	def __init__(self,main,smtp='',sender=''):
 		self.smtp=smtp
 		self.sender=sender
 
-		self.sendPage=Toplevel(master)
+		self.sendPage=Toplevel(main)
 
 		self.sendToLabel = Label(self.sendPage,text='send to:')
 		self.sendToLabel.grid()

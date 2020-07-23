@@ -11,34 +11,34 @@ import string
 class loginPage(object):  
       
       
-    def __init__(self, master, info='Mail Send System'):  
-            self.master = master  
-            self.mainlabel = Label(master, text=info, justify=CENTER)  
+    def __init__(self, main, info='Mail Send System'):  
+            self.main = main  
+            self.mainlabel = Label(main, text=info, justify=CENTER)  
             self.mainlabel.grid(row=0, columnspan=3)  
       
       
-            self.user = Label(master, text='username', borderwidth=2)  
+            self.user = Label(main, text='username', borderwidth=2)  
             self.user.grid(row=1, sticky=W)  
       
       
-            self.pwd = Label(master, text='password', borderwidth=2)  
+            self.pwd = Label(main, text='password', borderwidth=2)  
             self.pwd.grid(row=2, sticky=W)  
       
       
-            self.userEntry = Entry(master)  
+            self.userEntry = Entry(main)  
             self.userEntry.grid(row=1, column=1, columnspan=2)  
             self.userEntry.focus_set()  
       
       
-            self.pwdEntry = Entry(master, show='*')  
+            self.pwdEntry = Entry(main, show='*')  
             self.pwdEntry.grid(row=2, column=1, columnspan=2)  
       
       
-            self.loginButton = Button(master, text='Login', borderwidth=2, command=self.login)  
+            self.loginButton = Button(main, text='Login', borderwidth=2, command=self.login)  
             self.loginButton.grid(row=3, column=1)  
       
       
-            self.clearButton = Button(master, text='Clear', borderwidth=2, command=self.clear)  
+            self.clearButton = Button(main, text='Clear', borderwidth=2, command=self.clear)  
             self.clearButton.grid(row=3, column=2)  
       
       
@@ -68,7 +68,7 @@ class loginPage(object):
             except Exception, e:  
                 tkMessageBox.showerror('连接错误', '%s' % e)  
                 return  
-            self.mySendMail = sendMail(self.master, self.mySMTP, self.username)  
+            self.mySendMail = sendMail(self.main, self.mySMTP, self.username)  
       
       
     def clear(self):  
@@ -86,12 +86,12 @@ class loginPage(object):
       
 class sendMail(object):  
     'my sendemail class'  
-    def __init__(self, master, smtp='', sender=''):  
+    def __init__(self, main, smtp='', sender=''):  
             self.smtp = smtp  
             self.sender = sender  
       
       
-            self.sendPage = Toplevel(master)  
+            self.sendPage = Toplevel(main)  
       
       
             self.sendToLabel = Label(self.sendPage, text='send to:')  

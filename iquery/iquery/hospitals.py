@@ -17,7 +17,7 @@ from .utils import colored, requests_get, exit_after_echo
 __all__ = ['query']
 
 QUERY_URL = ('https://raw.githubusercontent.com/'
-             'open-power-workgroup/Hospital/master/'
+             'open-power-workgroup/Hospital/main/'
              'resource/API_resource/hospital_list.json')
 
 
